@@ -16,6 +16,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="order-2 md:order-1"
         >
           <motion.h2 
             initial={{ opacity: 0 }}
@@ -56,9 +57,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative hidden md:block"
+          className="relative order-1 md:order-2 mt-4 md:mt-0"
         >
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative w-full aspect-square max-w-[18rem] md:max-w-md mx-auto">
             {/* Decorative circles */}
             <div className="absolute inset-0 border-2 border-primary/20 rounded-full animate-spin-slow" />
             <div className="absolute inset-4 border-2 border-accent/20 rounded-full animate-spin-reverse-slow" />
@@ -66,7 +67,7 @@ const Hero = () => {
             {/* Main image container */}
             <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl">
               <img 
-                src="/profile.jpg" 
+                src="/profile.png" 
                 alt={`${profile.name} profile`} 
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { getGmailComposeUrl, profile, socialLinks } from '../data/profile';
 
 const Contact = () => {
@@ -13,6 +13,10 @@ const Contact = () => {
     GitHub: <FaGithub size={24} />,
     LinkedIn: <FaLinkedin size={24} />,
     Email: <FaEnvelope size={24} />,
+    WhatsApp: <FaWhatsapp size={24} />,
+  };
+  const socialHoverClassMap = {
+    WhatsApp: 'hover:text-green-500 dark:hover:text-green-400',
   };
 
   const handleSubmit = (event) => {
@@ -72,7 +76,7 @@ const Contact = () => {
                   aria-label={link.name}
                   target={link.href.startsWith('http') ? '_blank' : undefined}
                   rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="p-3 bg-white dark:bg-slate-800 rounded-full shadow-sm hover:shadow-md hover:text-primary transition-all"
+                  className={`p-3 bg-white dark:bg-slate-800 rounded-full shadow-sm hover:shadow-md transition-all ${socialHoverClassMap[link.name] || 'hover:text-primary'}`}
                 >
                   {socialIconMap[link.name]}
                 </a>

@@ -4,7 +4,7 @@ import { profile } from '../data/profile';
 
 const About = () => {
   const stats = [
-    { label: 'Experience', value: '9 mo', icon: <FaAward /> },
+    { label: 'Experience', value: '8 months', icon: <FaAward /> },
     { label: 'Projects Completed', value: '10+', icon: <FaProjectDiagram /> },
     { label: 'Happy Clients', value: '5+', icon: <FaUsers /> },
   ];
@@ -31,7 +31,7 @@ const About = () => {
             </div>
             {/* Experience Badge */}
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl border-l-4 border-primary">
-              <span className="block text-3xl font-bold text-primary">9 mo</span>
+              <span className="block text-3xl font-bold text-primary">8 months</span>
               <span className="text-sm font-medium text-text-secondary">Practical Experience</span>
             </div>
           </motion.div>
@@ -46,7 +46,7 @@ const About = () => {
             <h3 className="text-primary font-semibold mb-4 uppercase tracking-widest text-sm">About Me</h3>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">I Build Modern Web Experiences That Scale</h2>
             <p className="text-text-secondary text-lg mb-6 leading-relaxed">
-              I am a passionate Full Stack Developer with 8 to 9 months of practical experience creating dynamic and user-centric web applications. I specialize in React, Node.js, and modern CSS frameworks like Tailwind.
+              I am a passionate Full Stack Developer with 8 months of practical experience creating dynamic and user-centric web applications. I specialize in React, Node.js, and modern CSS frameworks like Tailwind & Bootstrap.
             </p>
             <p className="text-text-secondary text-lg mb-8 leading-relaxed">
               My approach focuses on writing clean, maintainable code and delivering high-quality products that meet client needs. I love solving complex problems and staying up-to-date with the latest tech trends.

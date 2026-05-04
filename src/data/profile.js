@@ -22,6 +22,11 @@ export const getGmailComposeUrl = ({ subject = '', body = '' } = {}) => {
   return `https://mail.google.com/mail/?${params.toString()}`;
 };
 
+export const getWhatsAppUrl = () => {
+  const phoneNumber = profile.phone.replace(/\D/g, '');
+  return `https://wa.me/${phoneNumber}`;
+};
+
 export const socialLinks = [
   {
     name: 'GitHub',
@@ -34,8 +39,8 @@ export const socialLinks = [
     href: 'https://www.linkedin.com/in/muhammad-anas-52476030a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   },
   {
-    name: 'Email',
-    label: 'EM',
-    href: getGmailComposeUrl(),
+    name: 'WhatsApp',
+    label: 'WA',
+    href: getWhatsAppUrl(),
   },
 ];
