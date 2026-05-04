@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import { profile, socialLinks } from '../data/profile';
+import { getGmailComposeUrl, profile, socialLinks } from '../data/profile';
 
 const Contact = () => {
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profile.location)}`;
   const contactInfo = [
-    { icon: <FaEnvelope />, label: 'Email', value: profile.email, href: `mailto:${profile.email}`, color: 'bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300' },
+    { icon: <FaEnvelope />, label: 'Email', value: profile.email, href: getGmailComposeUrl(), color: 'bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300' },
     { icon: <FaPhone />, label: 'Phone', value: profile.phoneDisplay, href: `tel:${profile.phone}`, color: 'bg-green-100 text-green-600 dark:bg-green-500/10 dark:text-green-300' },
     { icon: <FaMapMarkerAlt />, label: 'Location', value: profile.location, href: mapUrl, color: 'bg-red-100 text-red-600 dark:bg-red-500/10 dark:text-red-300' },
   ];
@@ -24,7 +24,7 @@ const Contact = () => {
     const message = formData.get('message');
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
 
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(getGmailComposeUrl({ subject, body }), '_blank', 'noreferrer');
     event.currentTarget.reset();
   };
 
@@ -49,8 +49,8 @@ const Contact = () => {
                 <a
                   key={info.label}
                   href={info.href}
-                  target={info.label === 'Location' ? '_blank' : undefined}
-                  rel={info.label === 'Location' ? 'noreferrer' : undefined}
+                  target={info.label === 'Email' || info.label === 'Location' ? '_blank' : undefined}
+                  rel={info.label === 'Email' || info.label === 'Location' ? 'noreferrer' : undefined}
                   className="flex items-center gap-4 rounded-xl transition-colors hover:text-primary"
                 >
                   <div className={`p-4 rounded-xl ${info.color} text-xl`}>

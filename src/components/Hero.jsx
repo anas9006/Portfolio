@@ -27,7 +27,7 @@ const Hero = () => {
             Hello, I am
           </motion.h2>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            {profile.name.split(' ')[0]} <span className="text-primary">SKYLINK</span>
+            {profile.name.split(' ')[0]} <span className="text-primary">Infinity Byte</span>
           </h1>
           <div className="h-12 mb-6">
             <span className="text-xl md:text-2xl text-text-secondary font-medium border-r-2 border-primary pr-2 animate-pulse">

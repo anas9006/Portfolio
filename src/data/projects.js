@@ -1,3 +1,5 @@
+import { getGmailComposeUrl } from './profile';
+
 export const projects = [
   {
     id: 1,
@@ -5,7 +7,7 @@ export const projects = [
     description: "Full-stack analytics dashboard with real-time data visualization.",
     image: "/project1.jpg",
     tags: ["React", "Node.js", "MongoDB", "Tailwind"],
-    liveUrl: "mailto:anassharif9001@gmail.com?subject=E-Commerce%20Dashboard%20Project",
+    liveUrl: getGmailComposeUrl({ subject: "E-Commerce Dashboard Project" }),
     githubUrl: "https://github.com/Anas-SKYLINK",
     category: "Web App"
   },
@@ -15,7 +17,7 @@ export const projects = [
     description: "Modern, responsive portfolio built with React and Framer Motion.",
     image: "/project2.jpg",
     tags: ["React", "Tailwind", "Framer Motion"],
-    liveUrl: "mailto:anassharif9001@gmail.com?subject=Portfolio%20Website%20Project",
+    liveUrl: getGmailComposeUrl({ subject: "Portfolio Website Project" }),
     githubUrl: "https://github.com/Anas-SKYLINK",
     category: "Web App"
   },
@@ -25,17 +27,17 @@ export const projects = [
     description: "Mobile-first task manager with drag-and-drop functionality.",
     image: "/project3.jpg",
     tags: ["React Native", "Firebase", "Redux"],
-    liveUrl: "mailto:anassharif9001@gmail.com?subject=Task%20Management%20App%20Project",
+    liveUrl: getGmailComposeUrl({ subject: "Task Management App Project" }),
     githubUrl: "https://github.com/Anas-SKYLINK",
     category: "Mobile"
   },
   {
     id: 4,
-    title: "Brand Identity Design",
+    title: "POS System",
     description: "Complete branding package for a tech startup.",
     image: "/project4.jpg",
     tags: ["Illustrator", "Photoshop", "Figma"],
-    liveUrl: "mailto:anassharif9001@gmail.com?subject=Brand%20Identity%20Design%20Project",
+    liveUrl: getGmailComposeUrl({ subject: "Brand Identity Design Project" }),
     githubUrl: "https://github.com/Anas-SKYLINK",
     category: "Design"
   },

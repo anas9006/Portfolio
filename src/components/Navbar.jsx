@@ -86,7 +86,7 @@ const Navbar = () => {
       </div>
 
       <AnimatePresence>
-        {isOpen && <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} links={navLinks} />}
+        {isOpen && <MobileMenu setIsOpen={setIsOpen} links={navLinks} />}
       </AnimatePresence>
     </nav>
   );

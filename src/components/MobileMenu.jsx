@@ -1,25 +1,51 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
 import { socialLinks } from '../data/profile';
 
 const MobileMenu = ({ setIsOpen, links }) => {
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
       transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-      className="fixed inset-0 z-[60] bg-white dark:bg-slate-900 md:hidden"
+      role="dialog"
+      aria-modal="true"
+      className="md:hidden"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        width: '100vw',
+        minHeight: '100dvh',
+        overflowY: 'auto',
+        backgroundColor: 'var(--color-background)',
+        color: 'var(--color-text-primary)',
+      }}
     >
-      <div className="flex flex-col h-full p-8">
-        <div className="flex justify-between items-center mb-12">
+      <div className="flex min-h-dvh flex-col px-8 py-10">
+        <div className="flex justify-between items-center mb-10">
           <span className="text-2xl font-bold text-primary">Menu</span>
-          <button onClick={() => setIsOpen(false)} aria-label="Close navigation menu" className="text-slate-900 dark:text-white">
+          <button
+            onClick={() => setIsOpen(false)}
+            aria-label="Close navigation menu"
+            className="rounded-full p-2 text-slate-900 transition-colors hover:bg-slate-100 dark:text-white dark:hover:bg-slate-800"
+          >
             <HiX size={32} />
           </button>
         </div>
 
-        <ul className="flex flex-col space-y-6">
+        <ul className="flex flex-col gap-5">
           {links.map((link, index) => (
             <motion.li
               key={link.name}
@@ -30,7 +56,7 @@ const MobileMenu = ({ setIsOpen, links }) => {
               <a
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-3xl font-bold hover:text-primary transition-colors"
+                className="block rounded-xl py-2 text-2xl font-bold leading-tight hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
@@ -38,7 +64,7 @@ const MobileMenu = ({ setIsOpen, links }) => {
           ))}
         </ul>
 
-        <div className="mt-auto pt-8 border-t border-slate-100 dark:border-slate-800">
+        <div className="mt-auto pt-10 border-t border-slate-100 dark:border-slate-800">
           <p className="text-slate-500 dark:text-slate-400 mb-4">Let's connect</p>
           <div className="flex space-x-6 text-xl">
             {socialLinks.map((link) => (

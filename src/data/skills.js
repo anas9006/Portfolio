@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaHtml5, FaJsSquare, FaFigma, FaPaintBrush } from 'react-icons/fa';
-import { SiTailwindcss, SiNextdotjs, SiTypescript, SiMongodb, SiPostgresql } from 'react-icons/si';
+import { SiTailwindcss, SiNextdotjs, SiTypescript, SiMongodb, SiPostgresql, SiExpress } from 'react-icons/si';
 
 export const skillsData = [
   {
@@ -16,7 +16,7 @@ export const skillsData = [
     category: "Backend",
     skills: [
       { name: "Node.js", level: 85, icon: FaNodeJs, color: "text-green-500" },
-      { name: "Express", level: 85, icon: FaNodeJs, color: "text-green-500" },
+      { name: "Express", level: 85, icon: SiExpress, color: "text-slate-900 dark:text-white" },
       { name: "MongoDB", level: 80, icon: SiMongodb, color: "text-green-600" },
       { name: "PostgreSQL", level: 75, icon: SiPostgresql, color: "text-blue-500" },
     ]

@@ -61,7 +61,7 @@ const Skills = () => {
             transition={{ delay: 0.2 }}
             className="text-text-secondary text-lg"
           >
-            I've spent years honing my skills across the stack to deliver seamless digital experiences.
+            I've spent the last several months building across the stack to deliver clean, responsive digital experiences.
           </motion.p>
         </div>
 

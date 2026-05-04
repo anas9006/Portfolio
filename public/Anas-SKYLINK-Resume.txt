@@ -7,7 +7,7 @@ Phone: +92 303 7015072
 Location: Sanda Islampura, Lahore, Pakistan
 
 Summary
-Full Stack Web Developer focused on modern, responsive, user-friendly web applications using React, Node.js, Tailwind CSS, and clean frontend architecture.
+Full Stack Web Developer with 8 to 9 months of practical experience building modern, responsive, user-friendly web applications using React, Node.js, Tailwind CSS, and clean frontend architecture.
 
 Core Skills
 - React, Next.js, JavaScript, TypeScript
@@ -17,9 +17,13 @@ Core Skills
 
 Experience
 Frontend Developer, Soft Logic, Gulberg Near Hafeez Center
-2022 - Present
-- Building performant React and Next.js interfaces.
+Sep 2025 - Present
+- Building responsive React and Next.js interfaces.
 - Improving usability, responsiveness, and maintainability across web products.
+
+Full Stack Development Practice, Personal Projects
+2025 - Present
+- Creating portfolio projects with React, Node.js, Express, MongoDB, and Tailwind CSS.
 
 Selected Work
 - E-Commerce Dashboard
