@@ -27,13 +27,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-xl shadow-lg shadow-primary/5 border-b border-white/50 dark:border-white/10 py-3' : 'bg-transparent py-5'}`}>
       <div className="container-custom flex justify-between items-center">
         <motion.a 
           href="#home"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold text-primary"
+          className="text-2xl font-black text-primary"
         >
           Anas<span className="text-slate-900 dark:text-white">.Dev</span>
         </motion.a>
@@ -50,7 +50,7 @@ const Navbar = () => {
               >
                 <a 
                   href={link.href}
-                  className="font-medium hover:text-primary transition-colors"
+                  className="relative font-semibold hover:text-primary transition-colors after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all hover:after:w-full"
                 >
                   {link.name}
                 </a>
@@ -60,7 +60,7 @@ const Navbar = () => {
           <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white transition-all hover:scale-110"
+            className="p-2 rounded-full bg-white/80 dark:bg-slate-900 text-slate-900 dark:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 border border-primary/15"
           >
             {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
           </button>
@@ -71,7 +71,7 @@ const Navbar = () => {
           <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
+            className="p-2 rounded-full bg-white/80 dark:bg-slate-900 text-slate-900 dark:text-white border border-primary/15"
           >
             {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
           </button>

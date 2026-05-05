@@ -33,13 +33,13 @@ const MobileMenu = ({ setIsOpen, links }) => {
         color: 'var(--color-text-primary)',
       }}
     >
-      <div className="flex min-h-dvh flex-col px-8 py-10">
+      <div className="flex min-h-dvh flex-col px-8 py-10 bg-[linear-gradient(135deg,rgba(6,182,212,0.14),transparent_42%,rgba(244,63,94,0.12))]">
         <div className="flex justify-between items-center mb-10">
-          <span className="text-2xl font-bold text-primary">Menu</span>
+          <span className="text-2xl font-black text-primary">Menu</span>
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close navigation menu"
-            className="rounded-full p-2 text-slate-900 transition-colors hover:bg-slate-100 dark:text-white dark:hover:bg-slate-800"
+            className="rounded-full p-2 text-slate-900 transition-colors hover:bg-white/70 dark:text-white dark:hover:bg-slate-900 border border-primary/10"
           >
             <HiX size={32} />
           </button>
@@ -56,7 +56,7 @@ const MobileMenu = ({ setIsOpen, links }) => {
               <a
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-xl py-2 text-2xl font-bold leading-tight hover:text-primary transition-colors"
+                className="block rounded-lg py-2 text-2xl font-bold leading-tight hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
@@ -64,7 +64,7 @@ const MobileMenu = ({ setIsOpen, links }) => {
           ))}
         </ul>
 
-        <div className="mt-auto pt-10 border-t border-slate-100 dark:border-slate-800">
+        <div className="mt-auto pt-10 border-t border-primary/10">
           <p className="text-slate-500 dark:text-slate-400 mb-4">Let's connect</p>
           <div className="flex space-x-6 text-xl">
             {socialLinks.map((link) => (

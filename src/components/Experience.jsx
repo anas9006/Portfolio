@@ -16,12 +16,14 @@ const ExperienceItem = ({ item, index }) => {
       <div className="hidden md:block w-5/12" />
       
       {/* Icon Node */}
-      <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-12 h-12 rounded-full justify-center text-white">
+      <motion.div
+        whileHover={{ scale: 1.12, rotate: 8 }}
+        className="z-20 flex items-center order-1 bg-gradient-to-br from-primary to-accent shadow-xl shadow-primary/25 w-12 h-12 rounded-full justify-center text-white"
+      >
         {item.type === 'work' ? <FaBriefcase /> : <FaGraduationCap />}
-      </div>
+      </motion.div>
 
-      {/* Content Card */}
-      <div className="order-1 bg-white dark:bg-slate-800 rounded-2xl shadow-lg w-full md:w-5/12 px-6 py-6 hover:shadow-xl transition-shadow border-t-4 border-primary">
+      <div className="order-1 bg-white/90 dark:bg-slate-950/75 rounded-lg shadow-lg shadow-slate-900/5 w-full md:w-5/12 px-6 py-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/15 transition-all border-t-4 border-primary backdrop-blur">
         <span className="text-primary font-bold text-sm uppercase tracking-wider">{item.period}</span>
         <h3 className="font-bold text-xl mt-1">{item.title}</h3>
         <h4 className="text-text-secondary font-medium mb-3">{item.company} | {item.location}</h4>
@@ -39,12 +41,12 @@ const Experience = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h3 className="text-primary font-semibold uppercase tracking-widest text-sm mb-4">My Journey</h3>
-          <h2 className="text-3xl md:text-5xl font-bold">Experience & Education</h2>
+          <h2 className="text-3xl md:text-5xl font-black">Experience & Education</h2>
         </div>
 
         <div className="relative wrap overflow-hidden p-0 md:p-10 h-full">
           {/* Vertical Line */}
-          <div className="absolute border-opacity-20 border-slate-300 dark:border-slate-700 h-full border left-1/2 hidden md:block"></div>
+          <div className="absolute h-full border left-1/2 hidden md:block border-primary/25"></div>
           
           {experience.map((item, index) => (
             <ExperienceItem key={item.id} item={item} index={index} />

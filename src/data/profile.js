@@ -2,6 +2,18 @@ export const profile = {
   name: 'M.Anas',
   brandName: 'Anas Infinity Byte',
   role: 'Full Stack Web Developer',
+  roles: [
+    'Full Stack Web Developer',
+    'MERN Stack Engineer',
+    'React & Node Specialist',
+    'Frontend Experience Builder',
+  ],
+  availability: 'Available for hire',
+  stats: [
+    { label: 'Experience', value: '8 months' },
+    { label: 'Major Projects', value: '10+' },
+    { label: 'Happy Clients', value: '5+' },
+  ],
   email: 'anassharif9001@gmail.com',
   phone: '+923037015072',
   phoneDisplay: '+92 303 7015072',

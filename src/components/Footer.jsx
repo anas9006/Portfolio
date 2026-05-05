@@ -7,11 +7,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 py-12">
+    <footer className="bg-white/80 dark:bg-slate-950/85 border-t border-primary/10 py-12 backdrop-blur">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <a href="#home" className="text-2xl font-bold text-primary">
+            <a href="#home" className="text-2xl font-black text-primary">
               Anas<span className="text-slate-900 dark:text-white">.Dev</span>
             </a>
             <p className="mt-4 text-text-secondary max-w-xs">
@@ -37,13 +37,13 @@ const Footer = () => {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="p-4 bg-primary text-white rounded-full shadow-lg hover:scale-110 transition-all group"
+            className="p-4 bg-gradient-to-br from-primary to-accent text-white rounded-full shadow-lg shadow-primary/25 hover:-translate-y-1 transition-all group"
           >
             <FaChevronUp className="group-hover:-translate-y-1 transition-transform" />
           </button>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-text-secondary text-sm">
+        <div className="mt-12 pt-8 border-t border-primary/10 text-center text-text-secondary text-sm">
           <p>&copy; {new Date().getFullYear()} {profile.brandName}. All rights reserved.</p>
         </div>
       </div>
