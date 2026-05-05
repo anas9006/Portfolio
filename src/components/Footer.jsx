@@ -22,7 +22,6 @@ const Footer = () => {
           <div className="flex gap-8">
             <ul className="flex flex-col gap-2">
               <li className="font-bold mb-2">Quick Links</li>
-              <li><a href="#home" className="text-text-secondary hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="text-text-secondary hover:text-primary transition-colors">About</a></li>
               <li><a href="#projects" className="text-text-secondary hover:text-primary transition-colors">Projects</a></li>
             </ul>

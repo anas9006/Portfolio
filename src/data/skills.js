@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaHtml5, FaJsSquare, FaFigma, FaPaintBrush } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaHtml5, FaGitAlt, FaFigma, FaPaintBrush } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiTypescript, SiMongodb, SiPostgresql, SiExpress } from 'react-icons/si';
 
 export const skillsData = [
@@ -24,9 +24,9 @@ export const skillsData = [
   {
     category: "Tools & Design",
     skills: [
-      { name: "Figma", level: 88, icon: FaFigma, color: "text-purple-500" },
+      { name: "Figma", level: 65, icon: FaFigma, color: "text-purple-500" },
       { name: "Photoshop", level: 70, icon: FaPaintBrush, color: "text-blue-700" },
-      { name: "Git", level: 92, icon: FaJsSquare, color: "text-orange-600" },
+      { name: "Git", level: 92, icon: FaGitAlt, color: "text-orange-600" },
     ]
   }
 ];
