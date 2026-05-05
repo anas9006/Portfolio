@@ -24,9 +24,11 @@ const Contact = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    formData.append('access_key', '7c647ef8-4678-440f-9348-0b84229fe1a4');
-    formData.append('from_name', profile.brandName);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      ...Object.fromEntries(formData),
+    };
 
     setIsSubmitting(true);
     setFormStatus({ type: '', message: '' });
@@ -34,18 +36,28 @@ const Contact = () => {
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
       });
       const data = await response.json();
 
       if (data.success) {
         setFormStatus({ type: 'success', message: 'Message sent successfully. I will get back to you soon.' });
-        event.currentTarget.reset();
+        form.reset();
       } else {
         setFormStatus({ type: 'error', message: data.message || 'Something went wrong. Please try again.' });
       }
-    } catch {
-      setFormStatus({ type: 'error', message: 'Unable to send right now. Please try again later.' });
+    } catch (error) {
+      form.submit();
+      setFormStatus({
+        type: 'success',
+        message: 'Message submitted. If you do not receive confirmation, please check the Web3Forms access key.',
+      });
+      form.reset();
+      console.error('Web3Forms fetch failed, used native form fallback:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -110,7 +122,17 @@ const Contact = () => {
             viewport={{ once: true }}
             className="animated-sheen bg-white/90 dark:bg-slate-950/75 p-8 md:p-12 rounded-lg shadow-xl shadow-primary/10 border border-primary/10 backdrop-blur"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <iframe name="web3forms-hidden-frame" title="Web3Forms submission" className="hidden" />
+            <form
+              onSubmit={handleSubmit}
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              target="web3forms-hidden-frame"
+              className="space-y-6"
+            >
+              <input type="hidden" name="access_key" value="7c647ef8-4678-440f-9348-0b84229fe1a4" />
+              <input type="hidden" name="from_name" value={profile.brandName} />
+              <input type="checkbox" name="botcheck" className="hidden" tabIndex="-1" autoComplete="off" />
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2 uppercase tracking-wide">Name</label>
