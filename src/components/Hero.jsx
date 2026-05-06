@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaDownload } from 'react-icons/fa';
 import { profile } from '../data/profile';
+import ParticleBackground from './ParticleBackground';
 
 const Hero = () => {
   const roles = useMemo(() => profile.roles?.length ? profile.roles : [profile.role], []);
@@ -37,6 +38,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
+        <ParticleBackground />
         <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(37,99,235,0.1),transparent_38%,rgba(15,118,110,0.08)_78%,transparent)]" />
         <motion.div
           className="absolute left-0 top-28 h-px w-full bg-gradient-to-r from-transparent via-primary/60 to-transparent"
