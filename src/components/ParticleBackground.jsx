@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const ParticleBackground = () => {
   const canvasRef = useRef(null);
@@ -7,17 +7,20 @@ const ParticleBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let animationFrameId;
     let particles = [];
     let mouse = { x: null, y: null, radius: 150 };
-    let isDark = document.documentElement.classList.contains('dark');
+    let isDark = document.documentElement.classList.contains("dark");
 
     // Sync theme
     const themeObserver = new MutationObserver(() => {
-      isDark = document.documentElement.classList.contains('dark');
+      isDark = document.documentElement.classList.contains("dark");
     });
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -37,7 +40,9 @@ const ParticleBackground = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(15, 23, 42, 0.5)';
+        ctx.fillStyle = isDark
+          ? "rgba(255, 255, 255, 0.5)"
+          : "rgba(15, 23, 42, 0.5)";
         ctx.fill();
       }
 
@@ -49,7 +54,7 @@ const ParticleBackground = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < mouse.radius) {
           if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
             this.x += 2;
@@ -81,8 +86,8 @@ const ParticleBackground = () => {
 
     const connect = () => {
       let opacityValue = 1;
-      const lineColor = isDark ? '147, 197, 253' : '37, 99, 235'; // Light blue vs Blue-600
-      
+      const lineColor = isDark ? "147, 197, 253" : "37, 99, 235"; // Light blue vs Blue-600
+
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
           let dx = particles[a].x - particles[b].x;
@@ -90,7 +95,7 @@ const ParticleBackground = () => {
           let distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
-            opacityValue = 1 - (distance / 150);
+            opacityValue = 1 - distance / 150;
             ctx.strokeStyle = `rgba(${lineColor}, ${opacityValue * (isDark ? 0.3 : 0.3)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -99,13 +104,13 @@ const ParticleBackground = () => {
             ctx.stroke();
           }
         }
-        
+
         // Mouse to particles
         let dx = particles[a].x - mouse.x;
         let dy = particles[a].y - mouse.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < mouse.radius) {
-          opacityValue = 1 - (distance / mouse.radius);
+          opacityValue = 1 - distance / mouse.radius;
           ctx.strokeStyle = `rgba(${lineColor}, ${opacityValue * (isDark ? 0.5 : 0.5)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
@@ -135,17 +140,17 @@ const ParticleBackground = () => {
       mouse.y = null;
     };
 
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseout", handleMouseOut);
 
     resizeCanvas();
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseout", handleMouseOut);
       themeObserver.disconnect();
       cancelAnimationFrame(animationFrameId);
     };

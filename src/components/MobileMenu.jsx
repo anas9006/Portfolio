@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { HiX } from 'react-icons/hi';
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import { socialLinks } from '../data/profile';
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { HiX } from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { socialLinks } from "../data/profile";
 
 const MobileMenu = ({ setIsOpen, links }) => {
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = originalOverflow;
@@ -22,22 +22,22 @@ const MobileMenu = ({ setIsOpen, links }) => {
 
   return (
     <motion.div
-      initial={{ x: '100%' }}
+      initial={{ x: "100%" }}
       animate={{ x: 0 }}
-      exit={{ x: '100%' }}
-      transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+      exit={{ x: "100%" }}
+      transition={{ type: "spring", damping: 25, stiffness: 200 }}
       role="dialog"
       aria-modal="true"
       className="md:hidden"
       style={{
-        position: 'fixed',
+        position: "fixed",
         inset: 0,
         zIndex: 9999,
-        width: '100vw',
-        minHeight: '100dvh',
-        overflowY: 'auto',
-        backgroundColor: 'var(--color-background)',
-        color: 'var(--color-text-primary)',
+        width: "100vw",
+        minHeight: "100dvh",
+        overflowY: "auto",
+        backgroundColor: "var(--color-background)",
+        color: "var(--color-text-primary)",
       }}
     >
       <div className="flex min-h-dvh flex-col px-8 py-10 bg-[linear-gradient(135deg,rgba(6,182,212,0.14),transparent_42%,rgba(244,63,94,0.12))]">
@@ -72,14 +72,16 @@ const MobileMenu = ({ setIsOpen, links }) => {
         </ul>
 
         <div className="mt-auto pt-10 border-t border-primary/10">
-          <p className="text-slate-500 dark:text-slate-400 mb-4">Let's connect</p>
+          <p className="text-slate-500 dark:text-slate-400 mb-4">
+            Let's connect
+          </p>
           <div className="flex space-x-6 text-xl">
             {socialLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                 className="hover:text-primary transition-colors"
                 aria-label={link.name}
               >
