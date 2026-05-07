@@ -1,16 +1,16 @@
 export const profile = {
   name: 'M.Anas',
   brandName: 'Anas Infinity Byte',
-  role: 'Full Stack Web Developer',
+  role: 'Full Stack Developer',
   roles: [
-    'Full Stack Web Developer',
+    'Full Stack Developer',
     'MERN Stack Engineer',
     'React & Node Specialist',
     'Frontend Experience Builder',
   ],
   availability: 'Available for hire',
   stats: [
-    { label: 'Experience', value: '8 months' },
+    { label: 'Experience', value: '1 Year' },
     { label: 'Major Projects', value: '10+' },
     { label: 'Happy Clients', value: '5+' },
   ],
@@ -18,7 +18,7 @@ export const profile = {
   phone: '+923037015072',
   phoneDisplay: '+92 303 7015072',
   location: 'Sanda Islampura, Lahore, Pakistan',
-  resumeUrl: '/Anas-SKYLINK-Resume.txt',
+  resumeUrl: '/Document from M.Anas_4015.pdf',
 };
 
 export const getGmailComposeUrl = ({ subject = '', body = '' } = {}) => {

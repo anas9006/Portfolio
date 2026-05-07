@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { socialLinks } from '../data/profile';
 
 const MobileMenu = ({ setIsOpen, links }) => {
@@ -12,6 +13,12 @@ const MobileMenu = ({ setIsOpen, links }) => {
       document.body.style.overflow = originalOverflow;
     };
   }, []);
+
+  const socialIconMap = {
+    GitHub: <FaGithub size={24} />,
+    LinkedIn: <FaLinkedin size={24} />,
+    WhatsApp: <FaWhatsapp size={24} />,
+  };
 
   return (
     <motion.div
@@ -74,8 +81,9 @@ const MobileMenu = ({ setIsOpen, links }) => {
                 target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
                 className="hover:text-primary transition-colors"
+                aria-label={link.name}
               >
-                {link.label}
+                {socialIconMap[link.name]}
               </a>
             ))}
           </div>

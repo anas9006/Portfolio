@@ -44,7 +44,7 @@ const About = () => {
             <h3 className="text-primary font-semibold mb-4 uppercase tracking-widest text-sm">About Me</h3>
             <h2 className="text-3xl md:text-4xl font-black mb-6">I Build Modern Web Experiences That Scale</h2>
             <p className="text-text-secondary text-lg mb-6 leading-relaxed">
-              I am a passionate Full Stack Developer with 8 months of practical experience creating dynamic and user-centric web applications. I specialize in React, Node.js, and modern CSS frameworks like Tailwind & Bootstrap.
+              I am a passionate Full Stack Developer with 1 Year of practical experience creating dynamic and user-centric web applications. I specialize in React, Node.js, and modern CSS frameworks like Tailwind & Bootstrap.
             </p>
             <p className="text-text-secondary text-lg mb-8 leading-relaxed">
               My approach focuses on writing clean, maintainable code and delivering high-quality products that meet client needs. I love solving complex problems and staying up-to-date with the latest tech trends.
