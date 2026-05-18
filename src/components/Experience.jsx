@@ -5,12 +5,12 @@ import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 const ExperienceItem = ({ item, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative flex items-center justify-between w-full mb-12 ${
-        index % 2 === 0 ? "flex-row-reverse" : ""
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={`relative flex items-start md:items-center justify-between w-full mb-8 md:mb-12 gap-4 md:gap-0 ${
+        index % 2 === 0 ? "md:flex-row-reverse" : ""
       }`}
     >
       <div className="hidden md:block w-5/12" />
@@ -18,20 +18,20 @@ const ExperienceItem = ({ item, index }) => {
       {/* Icon Node */}
       <motion.div
         whileHover={{ scale: 1.12, rotate: 8 }}
-        className="z-20 flex items-center order-1 bg-gradient-to-br from-primary to-accent shadow-xl shadow-primary/25 w-12 h-12 rounded-full justify-center text-white"
+        className="z-20 flex-shrink-0 flex items-center order-1 bg-gradient-to-br from-primary to-accent shadow-xl shadow-primary/25 w-12 h-12 rounded-full justify-center text-white"
       >
         {item.type === "work" ? <FaBriefcase /> : <FaGraduationCap />}
       </motion.div>
 
-      <div className="order-1 bg-white/90 dark:bg-slate-950/75 rounded-lg shadow-lg shadow-slate-900/5 w-full md:w-5/12 px-6 py-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/15 transition-all border-t-4 border-primary backdrop-blur">
-        <span className="text-primary font-bold text-sm uppercase tracking-wider">
+      <div className="order-1 bg-white/90 dark:bg-slate-950/75 rounded-lg shadow-lg shadow-slate-900/5 w-[calc(100%-4rem)] md:w-5/12 px-4 py-4 sm:px-6 sm:py-6 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/15 transition-all border-t-4 border-primary backdrop-blur">
+        <span className="text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">
           {item.period}
         </span>
-        <h3 className="font-bold text-xl mt-1">{item.title}</h3>
-        <h4 className="text-text-secondary font-medium mb-3">
+        <h3 className="font-bold text-lg sm:text-xl mt-1">{item.title}</h3>
+        <h4 className="text-text-secondary text-xs sm:text-sm font-medium mb-3">
           {item.company} | {item.location}
         </h4>
-        <p className="text-sm text-text-secondary leading-relaxed">
+        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
           {item.description}
         </p>
       </div>
@@ -43,18 +43,18 @@ const Experience = () => {
   return (
     <section id="experience" className="section-padding overflow-hidden">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h3 className="text-primary font-semibold uppercase tracking-widest text-sm mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h3 className="text-primary font-semibold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4">
             My Journey
           </h3>
-          <h2 className="text-3xl md:text-5xl font-black">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black">
             Experience & Education
           </h2>
         </div>
 
         <div className="relative wrap overflow-hidden p-0 md:p-10 h-full">
           {/* Vertical Line */}
-          <div className="absolute h-full border left-1/2 hidden md:block border-primary/25"></div>
+          <div className="absolute h-full border left-6 md:left-1/2 border-primary/20 pointer-events-none"></div>
 
           {experience.map((item, index) => (
             <ExperienceItem key={item.id} item={item} index={index} />

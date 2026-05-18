@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-text-primary selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-background text-text-primary selection:bg-primary selection:text-white overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
