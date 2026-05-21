@@ -63,10 +63,10 @@
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-24;
   }
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-3 sm:px-6 lg:px-8;
   }
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:-translate-y-1 bg-primary text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35;

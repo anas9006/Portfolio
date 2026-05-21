@@ -102,25 +102,25 @@ const Contact = () => {
   return (
     <section id="contact" className="section-padding bg-surface/80">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Left Side: Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-primary font-semibold uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4">
+            <h3 className="text-primary font-semibold uppercase tracking-widest text-[10px] sm:text-sm mb-2 sm:mb-4">
               Get In Touch
             </h3>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-5xl font-black mb-3 sm:mb-6">
               Let's Talk About Your Project
             </h2>
-            <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-6 sm:mb-10">
+            <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-4 sm:mb-10">
               I'm always open to discussing new projects, creative ideas or
               opportunities to be part of your visions.
             </p>
 
-            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+            <div className="space-y-3 sm:space-y-6 mb-6 sm:mb-10">
               {contactInfo.map((info) => (
                 <a
                   key={info.label}
@@ -138,21 +138,21 @@ const Contact = () => {
                   className="group flex items-center gap-3 sm:gap-4 rounded-lg transition-colors hover:text-primary min-w-0"
                 >
                   <div
-                    className={`p-3 sm:p-4 rounded-lg ${info.color} text-lg sm:text-xl group-hover:scale-110 group-hover:rotate-3 transition-transform flex-shrink-0`}
+                    className={`p-2.5 sm:p-4 rounded-lg ${info.color} text-base sm:text-xl group-hover:scale-110 group-hover:rotate-3 transition-transform flex-shrink-0`}
                   >
                     {info.icon}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[10px] sm:text-xs font-bold text-text-secondary uppercase tracking-wider">
+                    <p className="text-[8px] sm:text-xs font-bold text-text-secondary uppercase tracking-wider">
                       {info.label}
                     </p>
-                    <p className="text-sm sm:text-lg font-medium break-all sm:break-normal">{info.value}</p>
+                    <p className="text-xs sm:text-lg font-medium break-all sm:break-normal">{info.value}</p>
                   </div>
                 </a>
               ))}
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -160,7 +160,7 @@ const Contact = () => {
                   aria-label={link.name}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  className={`p-3 bg-white/85 dark:bg-slate-950/75 rounded-full shadow-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/15 transition-all border border-primary/10 ${socialHoverClassMap[link.name] || "hover:text-primary"}`}
+                  className={`p-2.5 sm:p-3 bg-white/85 dark:bg-slate-950/75 rounded-full shadow-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/15 transition-all border border-primary/10 ${socialHoverClassMap[link.name] || "hover:text-primary"}`}
                 >
                   {socialIconMap[link.name]}
                 </a>
@@ -173,7 +173,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="animated-sheen bg-white/90 dark:bg-slate-950/75 p-5 sm:p-8 md:p-12 rounded-lg shadow-xl shadow-primary/10 border border-primary/10 backdrop-blur"
+            className="animated-sheen bg-white/90 dark:bg-slate-950/75 p-4 sm:p-8 md:p-12 rounded-lg shadow-xl shadow-primary/10 border border-primary/10 backdrop-blur"
           >
             <iframe
               name="web3forms-hidden-frame"
@@ -185,7 +185,7 @@ const Contact = () => {
               action="https://api.web3forms.com/submit"
               method="POST"
               target="web3forms-hidden-frame"
-              className="space-y-4 sm:space-y-6"
+              className="space-y-3 sm:space-y-6"
             >
               <input
                 type="hidden"
@@ -200,9 +200,9 @@ const Contact = () => {
                 tabIndex="-1"
                 autoComplete="off"
               />
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid md:grid-cols-2 gap-3 sm:gap-6">
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 uppercase tracking-wide">
+                  <label className="block text-[10px] sm:text-sm font-bold mb-1 sm:mb-2 uppercase tracking-wide">
                     Name
                   </label>
                   <input
@@ -210,11 +210,11 @@ const Contact = () => {
                     type="text"
                     placeholder="John Doe"
                     required
-                    className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
+                    className="w-full px-3 py-2.5 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 uppercase tracking-wide">
+                  <label className="block text-[10px] sm:text-sm font-bold mb-1 sm:mb-2 uppercase tracking-wide">
                     Email
                   </label>
                   <input
@@ -222,12 +222,12 @@ const Contact = () => {
                     type="email"
                     placeholder="john@example.com"
                     required
-                    className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
+                    className="w-full px-3 py-2.5 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 uppercase tracking-wide">
+                <label className="block text-[10px] sm:text-sm font-bold mb-1 sm:mb-2 uppercase tracking-wide">
                   Subject
                 </label>
                 <input
@@ -235,23 +235,23 @@ const Contact = () => {
                   type="text"
                   placeholder="How can I help you?"
                   required
-                  className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
+                  className="w-full px-3 py-2.5 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm sm:text-base"
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-bold mb-1.5 sm:mb-2 uppercase tracking-wide">
+                <label className="block text-[10px] sm:text-sm font-bold mb-1 sm:mb-2 uppercase tracking-wide">
                   Message
                 </label>
                 <textarea
                   name="message"
-                  rows="4"
+                  rows="3"
                   placeholder="Your message here..."
                   required
-                  className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none text-sm sm:text-base"
+                  className="w-full px-3 py-2.5 sm:px-5 sm:py-4 rounded-lg bg-slate-50/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none text-sm sm:text-base"
                 ></textarea>
               </div>
               <button
-                className="w-full btn-primary py-3 sm:py-4 text-sm sm:text-lg disabled:cursor-not-allowed disabled:opacity-70"
+                className="w-full btn-primary py-2.5 sm:py-4 text-sm sm:text-lg disabled:cursor-not-allowed disabled:opacity-70"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

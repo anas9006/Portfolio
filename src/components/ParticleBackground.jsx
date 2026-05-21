@@ -85,7 +85,6 @@ const ParticleBackground = () => {
     };
 
     const connect = () => {
-      let opacityValue = 1;
       const lineColor = isDark ? "147, 197, 253" : "37, 99, 235"; // Light blue vs Blue-600
 
       for (let a = 0; a < particles.length; a++) {
@@ -95,7 +94,7 @@ const ParticleBackground = () => {
           let distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
-            opacityValue = 1 - distance / 150;
+            let opacityValue = 1 - distance / 150;
             ctx.strokeStyle = `rgba(${lineColor}, ${opacityValue * (isDark ? 0.3 : 0.3)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -110,8 +109,8 @@ const ParticleBackground = () => {
         let dy = particles[a].y - mouse.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < mouse.radius) {
-          opacityValue = 1 - distance / mouse.radius;
-          ctx.strokeStyle = `rgba(${lineColor}, ${opacityValue * (isDark ? 0.5 : 0.5)})`;
+          let mouseOpacity = 1 - distance / mouse.radius;
+          ctx.strokeStyle = `rgba(${lineColor}, ${mouseOpacity * (isDark ? 0.5 : 0.5)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);

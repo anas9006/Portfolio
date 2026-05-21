@@ -1,10 +1,11 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { socialLinks } from "../data/profile";
 
-const MobileMenu = ({ setIsOpen, links }) => {
+const MobileMenu = ({ setIsOpen, links, isHome }) => {
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -53,22 +54,37 @@ const MobileMenu = ({ setIsOpen, links }) => {
         </div>
 
         <ul className="flex flex-col gap-5">
-          {links.map((link, index) => (
+          {isHome ? (
+            links.map((link, index) => (
+              <motion.li
+                key={link.name}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 + index * 0.1 }}
+              >
+                <a
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-lg py-2 text-2xl font-bold leading-tight hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              </motion.li>
+            ))
+          ) : (
             <motion.li
-              key={link.name}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 + index * 0.1 }}
             >
-              <a
-                href={link.href}
+              <Link
+                to="/"
                 onClick={() => setIsOpen(false)}
                 className="block rounded-lg py-2 text-2xl font-bold leading-tight hover:text-primary transition-colors"
               >
-                {link.name}
-              </a>
+                Back to Home
+              </Link>
             </motion.li>
-          ))}
+          )}
         </ul>
 
         <div className="mt-auto pt-10 border-t border-primary/10">

@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion';
 import { skillsData } from '../data/skills';
 
-const SkillTable = ({ category, index }) => {
+const SkillCard = ({ category, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -6 }}
-      className={`relative overflow-hidden rounded-lg border border-slate-200/80 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-950/70 ${
-        index === 2 ? 'md:col-span-2 lg:col-span-1 md:max-w-xl md:mx-auto md:w-full' : ''
-      }`}
+      whileHover={{ y: -4 }}
+      className="relative overflow-hidden rounded-lg border border-slate-200/80 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-950/70"
     >
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-accent" />
 
@@ -22,52 +20,23 @@ const SkillTable = ({ category, index }) => {
         </h3>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[280px] text-left">
-          <thead>
-            <tr className="border-b border-slate-200/70 text-[10px] sm:text-xs uppercase tracking-[0.18em] text-text-secondary dark:border-white/10">
-              <th className="px-4 py-2.5 sm:px-5 sm:py-3 font-semibold">Skill</th>
-              <th className="px-4 py-2.5 sm:px-5 sm:py-3 font-semibold text-right">Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            {category.skills.map((skill, skillIndex) => (
-              <motion.tr
-                key={skill.name}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 + skillIndex * 0.04 }}
-                className="group border-b border-slate-100 last:border-0 hover:bg-slate-50/90 dark:border-white/5 dark:hover:bg-white/5"
-              >
-                <td className="px-4 py-3 sm:px-5 sm:py-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-lg bg-slate-100 text-lg sm:text-xl transition-transform group-hover:scale-105 dark:bg-slate-900 ${skill.color}`}>
-                      <skill.icon />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <span className="font-semibold text-sm sm:text-base">{skill.name}</span>
-                      <div className="mt-1.5 h-1 sm:h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: index * 0.08 + skillIndex * 0.04 }}
-                          className="h-full rounded-full bg-primary"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-4 py-3 sm:px-5 sm:py-4 text-right">
-                  <span className="inline-flex min-w-12 sm:min-w-14 justify-center rounded-full border border-primary/15 bg-primary/10 px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm font-bold text-primary">
-                    {skill.level}%
-                  </span>
-                </td>
-              </motion.tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="p-4 sm:p-5">
+        <div className="flex flex-wrap gap-2.5">
+          {category.skills.map((skill, skillIndex) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 + skillIndex * 0.03 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className={`inline-flex items-center gap-2 rounded-lg border border-slate-200/60 bg-slate-50/80 px-3 py-2 text-sm font-semibold shadow-sm transition-all hover:shadow-md hover:border-primary/30 dark:border-white/10 dark:bg-slate-900/60 ${skill.color}`}
+            >
+              <skill.icon className="text-base flex-shrink-0" />
+              <span>{skill.name}</span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
@@ -110,9 +79,9 @@ const Skills = () => {
           </motion.p>
         </div>
 
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skillsData.map((category, index) => (
-            <SkillTable key={category.category} category={category} index={index} />
+            <SkillCard key={category.category} category={category} index={index} />
           ))}
         </div>
       </div>
