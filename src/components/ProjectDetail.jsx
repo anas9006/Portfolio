@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
 import { getProjectById } from '../data/projects';
+import AccordionPanel from './AccordionPanel';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -32,7 +33,7 @@ const ProjectDetail = () => {
           className="mb-6"
         >
           <Link
-            to="/"
+            to="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
           >
             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
@@ -109,11 +110,7 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div className="rounded-lg border border-slate-200/80 bg-white/90 p-5 sm:p-6 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-primary" />
-                Technologies Used
-              </h2>
+            <AccordionPanel title="Technologies Used">
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
@@ -124,13 +121,9 @@ const ProjectDetail = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </AccordionPanel>
 
-            <div className="rounded-lg border border-slate-200/80 bg-white/90 p-5 sm:p-6 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-primary" />
-                Key Features
-              </h2>
+            <AccordionPanel title="Key Features">
               <ul className="space-y-3">
                 {project.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2.5 text-sm text-text-secondary">
@@ -139,13 +132,9 @@ const ProjectDetail = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </AccordionPanel>
 
-            <div className="rounded-lg border border-slate-200/80 bg-white/90 p-5 sm:p-6 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-slate-950/70">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-primary" />
-                Challenges Faced
-              </h2>
+            <AccordionPanel title="Challenges Faced">
               <ul className="space-y-4">
                 {project.problems.map((problem, index) => (
                   <li key={index} className="text-sm text-text-secondary leading-relaxed">
@@ -154,7 +143,7 @@ const ProjectDetail = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </AccordionPanel>
           </motion.div>
         </div>
       </div>

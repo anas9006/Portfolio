@@ -63,7 +63,7 @@ export const projects = [
       "Scentora Luxury is a premium e-commerce platform for perfumes and fragrances. It offers a complete online shopping experience including product browsing, detailed product pages, shopping cart functionality, and a streamlined checkout process with multiple payment options.",
     image: "/project3.png",
     tags: ["React", "Redux", "Tailwind", "Node", "Express", "MongoDB"],
-    technologies: ["React 18", "Redux Toolkit", "Node.js", "Express", "MongoDB", "Mongoose", "Tailwind CSS", "JWT", "Stripe API"],
+    technologies: ["React 18", "Redux Toolkit", "Node.js", "Express", "MongoDB", "Mongoose", "JWT", "Tailwind CSS", "Stripe API"],
     features: [
       "Product catalog with advanced search and filtering",
       "Shopping cart with persistent state management",

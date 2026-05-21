@@ -3,11 +3,13 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetail from './components/ProjectDetail';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-background text-text-primary selection:bg-primary selection:text-white overflow-x-hidden">
         <Navbar />
         <Routes>
