@@ -26,6 +26,7 @@ import {
   SiVscodium,
   SiVite,
   SiVercel,
+  SiRender,
 } from "react-icons/si";
 
 export const skillsData = [
@@ -104,8 +105,8 @@ export const skillsData = [
       { name: "Git", level: 92, icon: FaGitAlt, color: "text-orange-600" },
       { name: "Postman", level: 78, icon: SiPostman, color: "text-orange-500" },
       { name: "XAMPP", level: 75, icon: FaServer, color: "text-yellow-600" },
+      { name: "Render", level: 80, icon: SiRender, color: "text-slate-900 dark:text-white" },
       { name: "VS Code", level: 90, icon: SiVscodium, color: "text-blue-500" },
-      { name: "Vite", level: 82, icon: SiVite, color: "text-yellow-500" },
       { name: "Vercel", level: 80, icon: SiVercel, color: "text-slate-900 dark:text-white" },
     ],
   },

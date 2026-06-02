@@ -107,6 +107,33 @@ export const projects = [
     category: "Web App",
   },
   {
+    id: 6,
+    title: "POS — Point of Sale System",
+    description:
+      "Full-featured POS system with inventory, sales, purchases, and RBAC.",
+    fullDescription:
+      "A comprehensive Point of Sale system designed for retail and inventory management. It streamlines sales transactions, tracks inventory levels in real-time, manages purchase orders, and enforces role-based access control for secure multi-user operation. The system provides detailed reports on sales performance, stock movement, and profitability to help businesses make informed decisions.",
+    image: "/project6.png",
+    tags: ["React", "MySQL", "RBAC", "Inventory", "XAMPP"],
+    technologies: ["React 18", "Node.js", "Express", "MySQL", "XAMPP", "JWT Auth", "RBAC", "Tailwind CSS", "REST API", "Chart.js"],
+    features: [
+      "Point of Sale interface with quick product lookup and cart management",
+      "Real-time inventory tracking with low-stock alerts and auto-updates",
+      "Purchase order management with supplier tracking",
+      "Role-based access control (Admin, Manager, Cashier roles)",
+      "Sales reporting with revenue analytics and profit calculations",
+      "Product management with categories, barcodes, and pricing tiers"
+    ],
+    problems: [
+      "Designing a granular RBAC system required careful planning of permissions per endpoint — implemented a middleware-based permission checker that validates access at both route and resource levels.",
+      "Real-time inventory sync during concurrent sales transactions was solved with MongoDB atomic operations and optimistic concurrency control to prevent stock discrepancies.",
+      "Building a responsive POS interface that works on both desktop terminals and tablet devices required a custom grid layout that adapts touch targets for quick cashier workflows."
+    ],
+    liveUrl: "https://pos-frontend-new.vercel.app",
+    githubUrl: "https://github.com/anas9006/POS-Frontend-new",
+    category: "Web App",
+  },
+  {
     id: 2,
     title: "Landing Page Portfolio",
     description:

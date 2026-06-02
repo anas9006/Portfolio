@@ -55,7 +55,7 @@ const About = () => {
               I Build Modern Web Experiences That Scale
             </h2>
             <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-3 sm:mb-6 leading-relaxed">
-              Full Stack Developer with 1 year of practical experience
+              Full Stack Developer with {profile.stats[0].value} of practical experience
               developing responsive and scalable web applications using React,
               Next.js, Node.js, Express.js, MongoDB, and SQL. Skilled in
               creating modern UI/UX experiences with Tailwind CSS and Bootstrap.
