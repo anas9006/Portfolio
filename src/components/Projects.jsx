@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
-  const displayedProjects = projects.slice(0, 3);
+  const displayedProjects = projects.slice(0, 4);
 
   return (
     <section id="projects" className="section-padding bg-surface/80">
@@ -17,7 +17,7 @@ const Projects = () => {
 
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8"
+          className="grid grid-cols-2  lg:grid-cols-4 gap-4 sm:gap-8"
         >
           {displayedProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />

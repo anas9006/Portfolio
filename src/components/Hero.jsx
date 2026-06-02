@@ -141,7 +141,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative order-1 md:order-2 animate-float-soft"
         >
-          <div className="relative w-full aspect-square max-w-[11rem] sm:max-w-[18rem] md:max-w-sm lg:max-w-md mx-auto">
+          <div className="relative w-full aspect-square max-w-[15rem] sm:max-w-[18rem] md:max-w-sm lg:max-w-md mx-auto">
             <div className="absolute inset-0 rounded-full border border-primary/25 animate-spin-slow" />
             <div className="absolute inset-4 rounded-full border border-accent/20 animate-spin-reverse-slow" />
             <div className="absolute inset-12 rounded-full bg-gradient-to-br from-primary/16 via-transparent to-accent/12 blur-xl" />

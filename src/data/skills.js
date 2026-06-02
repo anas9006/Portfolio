@@ -5,6 +5,9 @@ import {
   FaGitAlt,
   FaFigma,
   FaPaintBrush,
+  FaServer,
+  FaDatabase,
+  FaCode,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -13,6 +16,16 @@ import {
   SiMongodb,
   SiPostgresql,
   SiExpress,
+  SiPostman,
+  SiJavascript,
+  SiRedux,
+  SiFramer,
+  SiSocketdotio,
+  SiChartdotjs,
+  SiJsonwebtokens,
+  SiVscodium,
+  SiVite,
+  SiVercel,
 } from "react-icons/si";
 
 export const skillsData = [
@@ -20,6 +33,12 @@ export const skillsData = [
     category: "Frontend",
     skills: [
       { name: "React", level: 90, icon: FaReact, color: "text-blue-400" },
+      {
+        name: "JavaScript",
+        level: 88,
+        icon: SiJavascript,
+        color: "text-yellow-500",
+      },
       {
         name: "Next.js",
         level: 85,
@@ -44,6 +63,9 @@ export const skillsData = [
         icon: FaHtml5,
         color: "text-orange-500",
       },
+      { name: "Redux Toolkit", level: 78, icon: SiRedux, color: "text-purple-600" },
+      { name: "Framer Motion", level: 82, icon: SiFramer, color: "text-pink-500" },
+      { name: "Chart.js", level: 75, icon: SiChartdotjs, color: "text-green-500" },
     ],
   },
   {
@@ -63,6 +85,10 @@ export const skillsData = [
         icon: SiPostgresql,
         color: "text-blue-500",
       },
+      { name: "JWT", level: 80, icon: SiJsonwebtokens, color: "text-purple-500" },
+      { name: "Mongoose", level: 78, icon: FaDatabase, color: "text-green-600" },
+      { name: "REST API", level: 85, icon: FaCode, color: "text-blue-500" },
+      { name: "Socket.io", level: 75, icon: SiSocketdotio, color: "text-slate-900 dark:text-white" },
     ],
   },
   {
@@ -76,6 +102,11 @@ export const skillsData = [
         color: "text-blue-700",
       },
       { name: "Git", level: 92, icon: FaGitAlt, color: "text-orange-600" },
+      { name: "Postman", level: 78, icon: SiPostman, color: "text-orange-500" },
+      { name: "XAMPP", level: 75, icon: FaServer, color: "text-yellow-600" },
+      { name: "VS Code", level: 90, icon: SiVscodium, color: "text-blue-500" },
+      { name: "Vite", level: 82, icon: SiVite, color: "text-yellow-500" },
+      { name: "Vercel", level: 80, icon: SiVercel, color: "text-slate-900 dark:text-white" },
     ],
   },
 ];

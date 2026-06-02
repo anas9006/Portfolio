@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -7,8 +7,51 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaWhatsapp,
+  FaChevronDown,
 } from "react-icons/fa";
 import { getGmailComposeUrl, profile, socialLinks } from "../data/profile";
+
+const SocialDropdown = ({ link, icon }) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        aria-label={link.name}
+        className="p-2.5 sm:p-3 bg-white/85 dark:bg-slate-950/75 rounded-full shadow-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/15 transition-all border border-primary/10 hover:text-primary cursor-pointer"
+      >
+        {icon}
+      </button>
+      {open && (
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 min-w-[140px] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-lg shadow-xl border border-primary/10 overflow-hidden">
+          {link.subLinks.map((sub) => (
+            <a
+              key={sub.name}
+              href={sub.href}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium hover:bg-primary/10 transition-colors"
+            >
+              {icon}
+              {sub.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Contact = () => {
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
@@ -153,18 +196,22 @@ const Contact = () => {
             </div>
 
             <div className="flex gap-3 sm:gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  aria-label={link.name}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  className={`p-2.5 sm:p-3 bg-white/85 dark:bg-slate-950/75 rounded-full shadow-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/15 transition-all border border-primary/10 ${socialHoverClassMap[link.name] || "hover:text-primary"}`}
-                >
-                  {socialIconMap[link.name]}
-                </a>
-              ))}
+              {socialLinks.map((link) =>
+                link.subLinks ? (
+                  <SocialDropdown key={link.name} link={link} icon={socialIconMap[link.name]} />
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    aria-label={link.name}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                    className={`p-2.5 sm:p-3 bg-white/85 dark:bg-slate-950/75 rounded-full shadow-sm hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/15 transition-all border border-primary/10 ${socialHoverClassMap[link.name] || "hover:text-primary"}`}
+                  >
+                    {socialIconMap[link.name]}
+                  </a>
+                )
+              )}
             </div>
           </motion.div>
 

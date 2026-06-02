@@ -29,33 +29,6 @@ export const projects = [
     category: "Web App",
   },
   {
-    id: 2,
-    title: "Landing Page Portfolio",
-    description:
-      "Modern, responsive portfolio built with React and Framer Motion.",
-    fullDescription:
-      "A visually stunning landing page portfolio designed to showcase creative work with smooth animations and a modern aesthetic. Features a clean layout, dark mode support, and seamless navigation with scroll-triggered animations.",
-    image: "/project2.png",
-    tags: ["React", "Tailwind", "Framer Motion"],
-    technologies: ["React 18", "Tailwind CSS", "Framer Motion", "Vite", "Lucide Icons", "CSS Animations"],
-    features: [
-      "Smooth scroll-triggered animations with Framer Motion",
-      "Dark/light mode with system preference detection",
-      "Fully responsive design across all devices",
-      "Optimized performance with lazy-loaded sections",
-      "SEO-friendly semantic HTML structure",
-      "Contact form with validation"
-    ],
-    problems: [
-      "Coordinating multiple scroll-triggered animations without causing layout shifts required careful use of Framer Motion's whileInView with proper viewport margins.",
-      "Ensuring smooth performance on mobile devices meant reducing animation complexity and using hardware-accelerated CSS properties where possible.",
-      "Dark mode transition needed a flash-free implementation — solved by storing the theme preference in localStorage and applying the class before React hydration."
-    ],
-    liveUrl: "https://landing-page-simple-khaki.vercel.app/",
-    githubUrl: "https://github.com/Rana-Muhammad-Anas/Landing-page-simple",
-    category: "Web App",
-  },
-  {
     id: 3,
     title: "Scentora Luxury",
     description: "E-commerce website for perfumes with full shopping experience.",
@@ -105,6 +78,59 @@ export const projects = [
     ],
     liveUrl: "https://nexo-frontend-gray.vercel.app/",
     githubUrl: "https://github.com/anas9006/Nexo-Frontend",
+    category: "Web App",
+  },
+  {
+    id: 5,
+    title: "AirAura — AQI & Weather",
+    description: "Real-time air quality index and weather monitoring app.",
+    fullDescription:
+      "AirAura is a comprehensive environmental monitoring application that provides real-time Air Quality Index (AQI) data and weather forecasts. Leveraging third-party APIs, it displays air pollution levels, temperature, humidity, wind speed, and more. The app features an intuitive visual interface with color-coded AQI indicators, historical data trends, and location-based tracking to help users make informed decisions about their outdoor activities.",
+    image: "/project5.png",
+    tags: ["React", "API Integration", "Tailwind"],
+    technologies: ["React 18", "Tailwind CSS", "OpenWeather API", "AQI API", "Vite", "Geolocation API", "Chart.js", "Axios"],
+    features: [
+      "Real-time AQI monitoring with color-coded health indicators",
+      "Current weather conditions including temperature, humidity & wind",
+      "7-day weather forecast with hourly breakdowns",
+      "Location-based auto-detection via geolocation",
+      "Search any city worldwide for AQI and weather data",
+      "Historical data trends with interactive charts"
+    ],
+    problems: [
+      "Integrating multiple third-party APIs (AQI + Weather) required careful coordination of async requests and handling rate limits to ensure reliable data delivery.",
+      "Geolocation permission handling across different browsers needed graceful fallbacks — implemented a manual city search as a robust alternative when location access is denied.",
+      "Visualizing AQI data in an intuitive way required a custom color-mapping system that translates numerical AQI values into meaningful visual indicators and health recommendations."
+    ],
+    liveUrl: "https://aqi-project-navy.vercel.app",
+    githubUrl: "https://github.com/anas9006",
+    category: "Web App",
+  },
+  {
+    id: 2,
+    title: "Landing Page Portfolio",
+    description:
+      "Modern, responsive portfolio built with React and Framer Motion.",
+    fullDescription:
+      "A visually stunning landing page portfolio designed to showcase creative work with smooth animations and a modern aesthetic. Features a clean layout, dark mode support, and seamless navigation with scroll-triggered animations.",
+    image: "/project2.png",
+    tags: ["React", "Tailwind", "Framer Motion"],
+    technologies: ["React 18", "Tailwind CSS", "Framer Motion", "Vite", "Lucide Icons", "CSS Animations"],
+    features: [
+      "Smooth scroll-triggered animations with Framer Motion",
+      "Dark/light mode with system preference detection",
+      "Fully responsive design across all devices",
+      "Optimized performance with lazy-loaded sections",
+      "SEO-friendly semantic HTML structure",
+      "Contact form with validation"
+    ],
+    problems: [
+      "Coordinating multiple scroll-triggered animations without causing layout shifts required careful use of Framer Motion's whileInView with proper viewport margins.",
+      "Ensuring smooth performance on mobile devices meant reducing animation complexity and using hardware-accelerated CSS properties where possible.",
+      "Dark mode transition needed a flash-free implementation — solved by storing the theme preference in localStorage and applying the class before React hydration."
+    ],
+    liveUrl: "https://landing-page-simple-khaki.vercel.app/",
+    githubUrl: "https://github.com/Rana-Muhammad-Anas/Landing-page-simple",
     category: "Web App",
   },
 ];

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ProjectsPage from './components/ProjectsPage';
 import ProjectDetail from './components/ProjectDetail';
+import NotFound from './components/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

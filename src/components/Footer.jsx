@@ -22,12 +22,14 @@ const Footer = () => {
           <div className="flex gap-6 md:gap-8">
             <ul className="flex flex-col gap-1 md:gap-2">
               <li className="font-bold text-sm md:text-base mb-1 md:mb-2">Quick Links</li>
-              <li><a href="#about" className="text-xs md:text-sm text-text-secondary hover:text-primary transition-colors">About</a></li>
-              <li><a href="#projects" className="text-xs md:text-sm text-text-secondary hover:text-primary transition-colors">Projects</a></li>
+              <li><a href="/#about" className="text-xs md:text-sm text-text-secondary hover:text-primary transition-colors">About</a></li>
+              <li><a href="/#projects" className="text-xs md:text-sm text-text-secondary hover:text-primary transition-colors">Projects</a></li>
             </ul>
             <ul className="flex flex-col gap-1 md:gap-2">
               <li className="font-bold text-sm md:text-base mb-1 md:mb-2">Services</li>
               <li className="text-xs md:text-sm text-text-secondary">Web Development</li>
+              <li className="text-xs md:text-sm text-text-secondary">Full Stack Application</li>
+              <li className="text-xs md:text-sm text-text-secondary">Database Design</li>
               <li className="text-xs md:text-sm text-text-secondary">UI/UX Design</li>
               <li className="text-xs md:text-sm text-text-secondary">Consultancy</li>
             </ul>

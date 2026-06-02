@@ -10,14 +10,14 @@ export const profile = {
   ],
   availability: "Available for hire",
   stats: [
-    { label: "Experience", value: "1 Year" },
+    { label: "Experience", value: "1 Year +" },
     { label: "Major Projects", value: "10+" },
     { label: "Happy Clients", value: "5+" },
   ],
   email: "anassharif9001@gmail.com",
   phone: "+923037015072",
   phoneDisplay: "+92 303 7015072",
-  location: "Sanda Islampura, Lahore, Pakistan",
+  location: "Lahore, Pakistan",
   resumeUrl: "/Document from M.Anas_4015.pdf",
 };
 
@@ -44,6 +44,10 @@ export const socialLinks = [
     name: "GitHub",
     label: "GH",
     href: "https://github.com/rana-muhammad-anas",
+    subLinks: [
+      { name: "GitHub 1", href: "https://github.com/rana-muhammad-anas" },
+      { name: "GitHub 2", href: "https://github.com/anas9006" },
+    ],
   },
   {
     name: "LinkedIn",

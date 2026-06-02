@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard';
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Web App', 'Mobile', 'Design'];
+  const categories = ['All', 'Web App', 'Mobile'];
 
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -42,7 +42,7 @@ const ProjectsPage = () => {
 
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8"
         >
           <AnimatePresence>
             {filteredProjects.map((project) => (
