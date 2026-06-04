@@ -18,7 +18,7 @@ export const profile = {
   phone: "+923037015072",
   phoneDisplay: "+92 303 7015072",
   location: "Lahore, Pakistan",
-  resumeUrl: "/Document from M.Anas_4015.pdf",
+  resumeUrl: "/Muhammad_Anas_Resume.pdf",
 };
 
 export const getGmailComposeUrl = ({ subject = "", body = "" } = {}) => {
