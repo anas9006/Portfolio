@@ -4,7 +4,7 @@ export const experience = [
     title: "Full Stack Developer",
     company: "Infinity Byte",
     location: "Cantt, Lahore, Pakistan",
-    period: "Dec 2025 – Present",
+    period: "Nov 2025 – Present",
     description:
       "Designing and developing modern full-stack applications with React, Node.js, Express.js, MongoDB, and SQL. Implementing responsive UI, RESTful APIs, authentication systems, and scalable database architecture for real-world projects.",
     type: "work",
@@ -14,7 +14,7 @@ export const experience = [
     title: "Frontend Developer",
     company: "Soft Logic",
     location: "Gulberg, Lahore, Pakistan",
-    period: "Sep 2025 – Dec 2025",
+    period: "Aug 2025 – Oct 2025",
     description:
   "Built modern, responsive web applications using React, Next.js, and Tailwind CSS. Created reusable components, improved UI performance, and implemented clean, maintainable frontend architecture for scalable projects.",
     type: "work",
