@@ -129,7 +129,7 @@ export const projects = [
       "Real-time inventory sync during concurrent sales transactions was solved with MongoDB atomic operations and optimistic concurrency control to prevent stock discrepancies.",
       "Building a responsive POS interface that works on both desktop terminals and tablet devices required a custom grid layout that adapts touch targets for quick cashier workflows."
     ],
-    liveUrl: "https://pos-frontend-new.vercel.app",
+    liveUrl: "https://pos.afaqmis.com/",
     githubUrl: "https://github.com/anas9006/POS-Frontend-new",
     category: "Web App",
   },
